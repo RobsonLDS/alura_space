@@ -14,7 +14,7 @@ def index(request):
     return render(request, 'galeria/index.html', {"cards": dados})
     '''
 
-    fotografias = Fotografia.objects.all()
+    fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)
     return render(request, 'galeria/index.html', {"cards": fotografias})
 
 def imagem(request, foto_id):

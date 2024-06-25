@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.getenv('SECRET_KEY'))       #* link da Chave
+SECRET_KEY = str(os.getenv('SECRET_KEY'))       #* link da Chave (gravada em '.env')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'galeria.apps.GaleriaConfig', #* APP da Galeria
+    'usuarios.apps.UsuariosConfig', #* APP do Usuarios
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+#* STATIC
+
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
@@ -127,9 +130,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')      #* CRIA a pasta estatica
 
 #* MEDIA
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")        #* CRIA a pasta "media"
 
-MEDIA_URL = "/media/"
+MEDIA_URL = "/media/"                               #* CAMINHO para a pasta "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

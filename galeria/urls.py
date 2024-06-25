@@ -1,3 +1,6 @@
+
+#* Redirecionamento de URLS da Aplicação (GALERIA) 
+
 from django.urls import path
 from galeria.views import buscar, index, imagem
 

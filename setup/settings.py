@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'galeria.apps.GaleriaConfig', #* APP da Galeria
-    'usuarios.apps.UsuariosConfig', #* APP do Usuarios
+
+    'apps.galeria.apps.GaleriaConfig', #* APP da Galeria
+    'apps.usuarios.apps.UsuariosConfig', #* APP do Usuarios
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,11 @@ MEDIA_URL = "/media/"                               #* CAMINHO para a pasta "med
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#* MESSAGES
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success',
+}

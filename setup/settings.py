@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.galeria.apps.GaleriaConfig', #* APP da Galeria
-    'apps.usuarios.apps.UsuariosConfig', #* APP do Usuarios
-    'apps.blog.apps.BlogConfig', #* APP do Blog
+    'apps.galeria.apps.GaleriaConfig',                  #* APP da Galeria
+    'apps.usuarios.apps.UsuariosConfig',                #* APP do Usuarios
+    'apps.blog.apps.BlogConfig',                        #* APP do Blog
+    'apps.mensagens_email.apps.MensagensEmailConfig',   #* APP do Mensagens_Email
 
     'ckeditor',                  #* PLUGIN CKEDITOR
     'ckeditor_uploader',         #* PLUGIN CKEDITOR_UPLOADER

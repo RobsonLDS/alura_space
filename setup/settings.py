@@ -41,7 +41,21 @@ INSTALLED_APPS = [
 
     'apps.galeria.apps.GaleriaConfig', #* APP da Galeria
     'apps.usuarios.apps.UsuariosConfig', #* APP do Usuarios
+    'apps.blog.apps.BlogConfig', #* APP do Blog
+
+    'ckeditor',                  #* PLUGIN CKEDITOR
+    'ckeditor_uploader',         #* PLUGIN CKEDITOR_UPLOADER
 ]
+
+CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'  #* CONFIG CKEDITOR
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_CONFIGS = {
+    'default':{
+        #'toolbar': 'Basic'
+        #'toolbar': 'full'
+        #'height': '100'
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

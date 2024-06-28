@@ -1,0 +1,49 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+        <style>
+            .post{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 5%;
+            }
+            .card{
+                border: 2px solid black;
+                margin-bottom: 10px;
+            }
+            .blog-form{
+                padding: 20px;
+            }
+        </style>
+
+        <h1> DJANGO CKEDITOR </h1>
+
+        <!-- CAMPO DE LOAD CKEDITOR -->
+        <section class="post">
+            {% for item in data %}
+            <div class="card">
+                <h1>{{ item.name }}</h1>
+                <p>{{ item.body|safe }}</p>
+            </div>
+            {% endfor %}
+        </section>
+            
+        <!-- CAMPO DE EDICAO CKEDITOR -->
+        <section class="blog-form">
+            <h2>Blog Form</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+
+                <button type="submit"> Submit </button>
+            </form>
+        </section>
+
+
+    </main>
+</div>
+
+{% endblock %}
